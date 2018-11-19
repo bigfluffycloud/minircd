@@ -35,3 +35,5 @@ run: ${bin}
 
 .PHONY: all clean build
 
+commit push pull:
+	git $@
