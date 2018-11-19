@@ -6,10 +6,10 @@
 #define	TARGET_LEN	120
 #define	MSG_LEN		512
 struct	irc_msg {
-    char sender[PREFIX_LEN],
-         cmd[CMD_LEN],
-         target[TARGET_LEN],
-         msg[MSG_LEN];
+    char sender[PREFIX_LEN];
+    char cmd[CMD_LEN];
+    int  argc;
+    char **argv;
 };
 typedef struct irc_msg irc_msg_t;
 

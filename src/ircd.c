@@ -14,6 +14,8 @@ int	main(int argc, char **argv) {
     // Read configuration
     // Start listeners
     // Main Loop
+    parse_message(":joseph!webirc@irc.user PRIVMSG web37 :Hey dude what's up?");
+
     while (!dying) {
         // Process events
         ev_loop(EV_A_ 0);
