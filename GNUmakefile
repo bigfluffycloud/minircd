@@ -25,7 +25,7 @@ clean:
 	${RM} -f ${objs} ${bin}
 
 ${bin}: ${objs}
-	$(CC) -o ${bin} ${objs}
+	$(CC) ${LDFLAGS} -o ${bin} ${objs}
 	
 obj/%.o:src/%.c GNUmakefile
 	${CC} ${CFLAGS} -o $@ -c $<
