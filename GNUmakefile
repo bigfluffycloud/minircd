@@ -8,7 +8,7 @@ bin := bin/minircd
 bin_srcs := $(wildcard src/*.c)
 bin_objs := $(patsubst src/%.c,obj/%.o,${bin_srcs})
 mod_srcs := $(wildcard modsrc/*.c)
-mod_objs := $(patsubst modsrc/%.c,obj/mod_%.so,${mod_srcs})
+mod_objs := $(patsubst modsrc/%.c,lib/modules/mod_%.so,${mod_srcs})
 mod_tmp := $(patsubst modsrc/%.c,obj/mod_%s.o,${mod_srcs})
 CFLAGS += -DVERSION="\"$(MINIRCD_VERSION)\""
 MOD_CFLAGS := ${CFLAGS}
@@ -35,7 +35,7 @@ modules: ${mod_objs}
 obj/%.o:src/%.c GNUmakefile
 	${CC} ${CFLAGS} -o $@ -c $<
 
-obj/mod_%.so:obj/mod_%.o
+lib/modules/mod_%.so:obj/mod_%.o
 	${LD} -o $@ $^
 
 obj/mod_%.o:modsrc/%.c GNUmakefile
