@@ -2,7 +2,7 @@ MINIRCD_VERSION=0.0.1
 
 all: world
 CFLAGS := -Wall -ansi -pedantic -std=gnu99
-LDFLAGS := -lev
+LDFLAGS := -lev -lsqlite3
 
 bin := bin/minircd
 srcs = $(wildcard src/*.c)
