@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+   minircd:
+#     depends_on:
+#       - db
+#     image: nginx:latest
+     ports:
+       - "6697"
+       - "6680"
+     restart: unless-stopped
+     volumes:
+       - ./conf:/conf/:cached
+     build: .
+        # Nothing yet
+     environment:
